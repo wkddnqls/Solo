@@ -1,5 +1,5 @@
 <!-- Header -->
-![header](https://capsule-render.vercel.app/api?type=rect&color=0:6a11cb,100:2575fc&height=150&text=🎮%20Game%20Solo%20Project&fontAlign=50&fontSize=40&fontColor=ffffff&desc=Personal%20Indie%20Dev%20Journey&descAlignY=70)
+![header](https://capsule-render.vercel.app/api?type=rect&color=0:6a11cb,100:2575fc&height=150&text=🎮%20Game%20Project&fontAlign=50&fontSize=40&fontColor=ffffff&desc=Personal%20Indie%20Dev%20Journey&descAlignY=70)
 
 ---
 
