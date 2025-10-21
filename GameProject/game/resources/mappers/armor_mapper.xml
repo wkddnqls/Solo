@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+
+
+<mapper namespace="ArmorMapper">
+
+
+<resultMap  id = "ArmorCollection" type="Armor">
+ 
+  <result column = "ARMOR_NAME" property = "armorName"/>
+  <result column = "ARMOR_NUM" property = "armorNum"/>
+  <result column = "ARMOR_INITIAL" property = "armorInitial"/>
+  <result column = "ARMOR_DATE" property = "armorDate"/>
+  <result column = "ARMOR_USE" property = "armorUse"/>
+  
+</resultMap>
+  
+  <select id= "selectArmorAll" resultMap ="ArmorCollection" >
+     
+  SELECT ARMOR_NAME,
+         ARMOR_NUM,
+         ARMOR_INITIAL,
+         ARMOR_DATE,
+         ARMOR_USE
+         FROM ARMOR
+          ORDER BY ARMOR_DATE ASC
+
+  </select>
+  
+  <select id= "selectAllArmorCount" resultType ="_int" >
+     
+     
+     
+      SELECT COUNT(*) AS COUNT
+		FROM ARMOR
+	
+
+  </select>
+  
+ <insert id="insertArmor" parameterType="Armor">
+    INSERT INTO ARMOR 
+    (ARMOR_NAME, ARMOR_INITIAL, ARMOR_USE)
+    VALUES 
+    (#{armorName}, #{armorInitial}, #{armorUse})
+  </insert>
+  
+  <delete id="deleteArmorByName" parameterType="string">
+        DELETE FROM ARMOR
+        WHERE ARMOR_NAME = #{armorName}
+    </delete>
+  
+</mapper>

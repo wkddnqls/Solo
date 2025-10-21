@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+
+
+<mapper namespace="SwordMapper">
+
+
+<resultMap  id = "SwordCollection" type="Sword">
+ 
+  <result column = "SWORD_NAME" property = "swordName"/>
+  <result column = "SWORD_NUM" property = "swordNum"/>
+  <result column = "SWORD_INITIAL" property = "swordInitial"/>
+  <result column = "SWORD_DATE" property = "swordDate"/>
+  <result column = "SWORD_USE" property = "swordUse"/>
+  
+</resultMap>
+  
+  <select id= "selectSwordAll" resultMap ="SwordCollection" >
+     
+  SELECT SWORD_NAME,
+         SWORD_NUM,
+         SWORD_INITIAL,
+         SWORD_DATE,
+         SWORD_USE
+         FROM SWORD
+          ORDER BY SWORD_DATE DESC
+
+  </select>
+  
+  <select id= "selectAllSwordCount" resultType ="_int" >
+     
+     
+     
+      SELECT COUNT(*) AS COUNT
+		FROM SWORD
+	
+
+  </select>
+  
+  <insert id="insertSword" parameterType="Sword">
+    INSERT INTO SWORD 
+    (SWORD_NAME, SWORD_INITIAL, SWORD_USE)
+    VALUES 
+    (#{swordName}, #{swordInitial}, #{swordUse})
+  </insert>
+
+  <delete id="deleteSwordByName" parameterType="string">
+        DELETE FROM SWORD
+        WHERE SWORD_NAME = #{swordName}
+    </delete>
+  
+  
+  <update id="enhanceSword">
+        UPDATE SWORD
+        SET SWORD_NUM = SWORD_NUM + 1
+        WHERE SWORD_NAME = #{swordName}
+    </update>
+    
+    
+</mapper>

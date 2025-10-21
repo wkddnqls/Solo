@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+
+<mapper namespace="ShieldMapper">
+
+
+<resultMap  id = "ShieldCollection" type="Shield">
+ 
+  <result column = "SHIELD_NAME" property = "shieldName"/>
+  <result column = "SHIELD_NUM" property = "shieldNum"/>
+  <result column = "SHIELD_INITIAL" property = "shieldInitial"/>
+  <result column = "SHIELD_DATE" property = "shieldDate"/>
+  <result column = "SHIELD_USE" property = "shieldUse"/>
+  
+</resultMap>
+  
+  <select id= "selectShieldAll" resultMap ="ShieldCollection" >
+     
+  SELECT SHIELD_NAME,
+         SHIELD_NUM,
+         SHIELD_INITIAL,
+         SHIELD_DATE,
+         SHIELD_USE
+         FROM SHIELD
+          ORDER BY SHIELD_DATE ASC
+
+  </select>
+  
+  <select id= "selectAllShieldCount" resultType ="_int" >
+     
+     
+     
+      SELECT COUNT(*) AS COUNT
+		FROM SHIELD
+	
+
+  </select>
+
+  <insert id="insertShield" parameterType="Shield">
+    INSERT INTO SHIELD 
+    (SHIELD_NAME, SHIELD_INITIAL, SHIELD_USE)
+    VALUES 
+    (#{shieldName}, #{shieldInitial}, #{shieldUse})
+  </insert>
+  
+
+    <delete id="deleteShieldByName" parameterType="string">
+        DELETE FROM SHIELD
+        WHERE SHIELD_NAME = #{shieldName}
+    </delete>
+    
+    
+    
+    
+    
+
+</mapper>

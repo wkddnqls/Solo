@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  
+  
+ <typeAliases>
+  <typeAlias alias="Sword" type="equipment0.swordcollection"/>
+  <typeAlias alias="Shield" type="equipment0.shieldcollection"/>
+  <typeAlias alias="Armor" type="equipment0.armorcollection"/>
+</typeAliases>
+  
+  
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
+        <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+        <property name="username" value="c##game"/>
+        <property name="password" value="game"/>
+      </dataSource>
+    </environment>
+  </environments>
+ 
+  <mappers>
+  <mapper resource="/mappers/armor_mapper.xml"/>
+    <mapper resource="/mappers/shield_mapper.xml"/>
+    <mapper resource="/mappers/sword_mapper.xml"/>
+  </mappers>
+</configuration>
