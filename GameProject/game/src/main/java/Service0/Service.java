@@ -138,13 +138,36 @@ public class Service {
 	        }
 	    }
 
-	    public List<swordcollection> getSwordList() {
+	    public boolean enforceItem(String name, int type, int userChoice) {
 	    	SqlSession sqlSession = Template.getSqlSession();
-	        try {
-	            return sd.selectAllSword(sqlSession);
-	        } finally {
-	            sqlSession.close();
+	        boolean success = false;
+
+	        // 난수 생성 (1 또는 2)
+	        int randomNumber = (int)(Math.random() * 2) + 1;
+	        System.out.println("난수: " + randomNumber + ", 유저 입력: " + userChoice);
+
+	        if (userChoice == randomNumber) { // 강화 성공
+	            int result = 0;
+
+	            switch (type) {
+	                case 1: result = sd.enhanceSword(sqlSession, name); break;
+	                //case 2: result = SED.enhanceShield(sqlSession, name); break;
+	                //case 3: result = AM.enhanceArmor(sqlSession, name); break;
+	            }
+
+	            if (result > 0) {
+	                sqlSession.commit();
+	                success = true;
+	            } else {
+	                sqlSession.rollback();
+	            }
+
+	        } else {
+	            System.out.println("강화 실패 😢");
 	        }
+
+	        sqlSession.close();
+	        return success;
 	    }
 	
 	

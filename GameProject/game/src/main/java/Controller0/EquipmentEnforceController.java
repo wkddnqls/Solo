@@ -43,9 +43,9 @@ public class EquipmentEnforceController extends HttpServlet {
         request.setAttribute("swordName", swordName);
         request.setAttribute("success", success);
 
-        request.getRequestDispatcher("/equipment/equip_enforce_result.jsp").forward(request, response);
+        request.getRequestDispatcher("/equipment/equipment_enforce.jsp").forward(request, response);
     }
-	}
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
