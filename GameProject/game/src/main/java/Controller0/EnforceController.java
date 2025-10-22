@@ -27,7 +27,7 @@ public class EnforceController extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
 
         String name = request.getParameter("name");
-        int type = Integer.parseInt(request.getParameter("type"));
+        String type = request.getParameter("type");
         int choice = Integer.parseInt(request.getParameter("choice"));
 
         Service service = new Service();

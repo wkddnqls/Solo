@@ -112,7 +112,7 @@ public class Service {
 
 
 	    // 강화 로직 (50% 확률)
-	    public boolean enforceSword(String swordName) {
+	  /*  public boolean enforceSword(String swordName) {
 	    	SqlSession sqlSession = Template.getSqlSession();
 	        try {
 	           
@@ -136,9 +136,9 @@ public class Service {
 	        } finally {
 	            sqlSession.close();
 	        }
-	    }
+	    } */
 
-	    public boolean enforceItem(String name, int type, int userChoice) {
+	    public boolean enforceItem(String name, String type, int userChoice) {
 	    	SqlSession sqlSession = Template.getSqlSession();
 	        boolean success = false;
 
@@ -150,7 +150,7 @@ public class Service {
 	            int result = 0;
 
 	            switch (type) {
-	                case 1: result = sd.enhanceSword(sqlSession, name); break;
+	                case "sword" : result = sd.enhanceSword(sqlSession, name); break;
 	                //case 2: result = SED.enhanceShield(sqlSession, name); break;
 	                //case 3: result = AM.enhanceArmor(sqlSession, name); break;
 	            }

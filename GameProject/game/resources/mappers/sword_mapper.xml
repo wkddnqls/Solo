@@ -55,7 +55,7 @@
     </delete>
   
   
-  <update id="enhanceSword">
+  <update id="enhanceSword" parameterType="map">
         UPDATE SWORD
         SET SWORD_NUM = SWORD_NUM + 1
         WHERE SWORD_NAME = #{swordName}

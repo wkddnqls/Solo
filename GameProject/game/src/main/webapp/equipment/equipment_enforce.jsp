@@ -38,8 +38,8 @@
     <p>1 또는 2 버튼 중 하나를 선택하세요!</p>
 
     <form action="${pageContext.request.contextPath}/enforce.do" method="post">
-        <input type="hidden" name="name" value="${param.name}" />
-        <input type="hidden" name="type" value=1 />
+        <input type="hidden" name="name" value="${swordName}" />
+        <input type="hidden" name="type" value="${type}" />
         <button class="btn1" type="submit" name="choice" value="1">1</button>
         <button class="btn2" type="submit" name="choice" value="2">2</button>
     </form>

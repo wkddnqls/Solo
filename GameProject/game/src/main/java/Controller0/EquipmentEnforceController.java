@@ -35,13 +35,10 @@ public class EquipmentEnforceController extends HttpServlet {
 
         boolean success = false;
 
-        if("sword".equals(type)) {
-            success = service.enforceSword(swordName);
-        }
-
         // 강화 결과 JSP로 전달
         request.setAttribute("swordName", swordName);
         request.setAttribute("success", success);
+        request.setAttribute("type", type);
 
         request.getRequestDispatcher("/equipment/equipment_enforce.jsp").forward(request, response);
     }
