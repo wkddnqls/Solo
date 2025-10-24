@@ -256,8 +256,8 @@ a.home-button:hover {
 					<c:forEach var="sh" items="${shieldList}">
 						<tr>
 							<td><a
-								  href="${pageContext.request.contextPath}/enforce.ep?swordName=${sh.ShieldName}&currentNum=${sh.ShieldNum}&swordUse=${sh.ShieldUse}&type=shield" class="btn-link">
-							    ${sh.ShieldName} </a></td>
+								  href="${pageContext.request.contextPath}/enforce.ep?shieldName=${sh.shieldName}&currentNum=${sh.shieldNum}&shieldUse=${sh.shieldUse}&type=shield" class="btn-link">
+							    ${sh.shieldName} </a></td>
 							<td>${sh.shieldInitial}</td>
 							<td>${sh.shieldNum}</td>
 							<td>${sh.shieldDate}</td>
@@ -319,7 +319,9 @@ a.home-button:hover {
 				<c:otherwise>
 					<c:forEach var="a" items="${armorList}">
 						<tr>
-							<td>${a.armorName}</td>
+							<td><a
+								  href="${pageContext.request.contextPath}/enforce.ep?armorName=${a.armorName}&currentNum=${a.armorName}&armorUse=${a.armorName}&type=armor" class="btn-link">
+							    ${a.armorName} </a></td>
 							<td>${a.armorInitial}</td>
 							<td>${a.armorNum}</td>
 							<td>${a.armorDate}</td>
