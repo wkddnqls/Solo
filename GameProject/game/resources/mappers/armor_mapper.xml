@@ -54,4 +54,10 @@
         WHERE ARMOR_NAME = #{armorName}
     </delete>
   
+  <update id="enhanceArmor" parameterType="map">
+        UPDATE ARMOR
+        SET ARMOR_NUM = ARMOR_NUM + 1
+        WHERE ARMOR_NAME = #{armorName}
+    </update>
+    
 </mapper>

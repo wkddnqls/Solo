@@ -1,12 +1,8 @@
 package Controller0;
 
-import static JDBC.common.close;
-import static JDBC.common.commit;
-import static JDBC.common.rollback;
 
 import java.sql.Connection;
 
-import JDBC.common;
 import equipment0.shieldcollection;
 import equipment0.swordcollection;
 

@@ -511,7 +511,7 @@
                                 <c:forEach var="s" items="${swordList}">
                                     <tr>
                                         <td>
-                                            <a href="${pageContext.request.contextPath}/enforce.ep?swordName=${s.swordName}&currentNum=${s.swordNum}&swordUse=${s.swordUse}&type=sword" 
+                                            <a href="${pageContext.request.contextPath}/Equipmentenforce.ep?Name=${s.swordName}&currentNum=${s.swordNum}&swordUse=${s.swordUse}&type=sword" 
                                                class="btn-link">${s.swordName}</a>
                                         </td>
                                         <td>${s.swordInitial}</td>
@@ -586,7 +586,7 @@
                                 <c:forEach var="sh" items="${shieldList}">
                                     <tr>
                                         <td>
-                                            <a href="${pageContext.request.contextPath}/enforce.ep?shieldName=${sh.shieldName}&currentNum=${sh.shieldNum}&shieldUse=${sh.shieldUse}&type=shield" 
+                                            <a href="${pageContext.request.contextPath}/Equipmentenforce.ep?Name=${sh.shieldName}&currentNum=${sh.shieldNum}&shieldUse=${sh.shieldUse}&type=shield" 
                                                class="btn-link">${sh.shieldName}</a>
                                         </td>
                                         <td>${sh.shieldInitial}</td>
@@ -661,7 +661,7 @@
                                 <c:forEach var="a" items="${armorList}">
                                     <tr>
                                         <td>
-                                            <a href="${pageContext.request.contextPath}/enforce.ep?armorName=${a.armorName}&currentNum=${a.armorNum}&armorUse=${a.armorUse}&type=armor" 
+                                            <a href="${pageContext.request.contextPath}/Equipmentenforce.ep?Name=${a.armorName}&currentNum=${a.armorNum}&armorUse=${a.armorUse}&type=armor" 
                                                class="btn-link">${a.armorName}</a>
                                         </td>
                                         <td>${a.armorInitial}</td>

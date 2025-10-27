@@ -151,8 +151,8 @@ public class Service {
 
 	            switch (type) {
 	                case "sword" : result = sd.enhanceSword(sqlSession, name); break;
-	                //case 2: result = SED.enhanceShield(sqlSession, name); break;
-	                //case 3: result = AM.enhanceArmor(sqlSession, name); break;
+	                case "shield": result = SED.enhanceShield(sqlSession, name); break;
+	                case "armor": result = AM.enhanceArmor(sqlSession, name); break;
 	            }
 
 	            if (result > 0) {

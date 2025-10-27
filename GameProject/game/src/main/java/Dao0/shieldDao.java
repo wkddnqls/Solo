@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.RowBounds;
@@ -58,6 +59,16 @@ public int insertShield(SqlSession sqlSession, shieldcollection shield) {
         return sqlSession.delete("ShieldMapper.deleteShieldByName", shieldName);
     }
 
+	
+	public int enhanceShield(SqlSession sqlSession, String shieldName) {
+        // 파라미터 맵 생성
+        HashMap<String, Object> param = new HashMap<>();
+        param.put("shieldName", shieldName);
+
+        // 강화 수치 +1
+        return sqlSession.update("ShieldMapper.enhanceShield", param);
+    }
+    
     
     
 public ArrayList<shieldcollection> selectkeywordshield(shieldcollection item, Connection conn) {

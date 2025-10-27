@@ -257,7 +257,7 @@
                 <h3 class="card-title">장비 강화하기</h3>
                 <div class="status">
                     <div class="status-dot available"></div>
-                    <span class="status-text available">사용 가능(화면 구현 완벽/기능 미흡)</span>
+                    <span class="status-text available">사용 가능</span>
                 </div>
                 <div class="card-border gradient-orange"></div>
             </a>

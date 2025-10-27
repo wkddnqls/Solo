@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.RowBounds;
@@ -49,7 +50,16 @@ public int insertArmor(SqlSession sqlSession, armorcollection armor) {
         return sqlSession.delete("ArmorMapper.deleteArmorByName", armorName);
     }
 
+	public int enhanceArmor(SqlSession sqlSession, String armorName) {
+        // 파라미터 맵 생성
+        HashMap<String, Object> param = new HashMap<>();
+        param.put("armorName", armorName);
 
+        // 강화 수치 +1
+        return sqlSession.update("ArmorMapper.enhanceArmor", param);
+    }
+    
+    
 
 
 

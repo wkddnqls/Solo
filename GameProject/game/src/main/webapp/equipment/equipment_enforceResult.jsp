@@ -24,7 +24,7 @@
             justify-content: center;
             padding: 1rem;
             position: relative;
-            overflow: hidden;
+           
         }
 
         /* Success Background */

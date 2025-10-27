@@ -304,13 +304,13 @@
 
             <div class="equipment-info">
                 <div class="equipment-label">강화 대상 장비</div>
-                <div class="equipment-name">${swordName}</div>
+                <div class="equipment-name">${EquipmentName}</div>
             </div>
 
             <div class="divider"></div>
 
             <form action="${pageContext.request.contextPath}/enforce.do" method="post">
-                <input type="hidden" name="name" value="${swordName}" />
+                <input type="hidden" name="name" value="${EquipmentName}" />
                 <input type="hidden" name="type" value="${type}" />
                 
                 <div class="button-container">

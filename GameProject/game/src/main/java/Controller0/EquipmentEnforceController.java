@@ -12,7 +12,7 @@ import Service0.Service;
 /**
  * Servlet implementation class EquipmentEnforceController
  */
-@WebServlet("/enforce.ep")
+@WebServlet("/Equipmentenforce.ep")
 public class EquipmentEnforceController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -30,13 +30,13 @@ public class EquipmentEnforceController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Service service = new Service();
         
-        String swordName = request.getParameter("swordName");
+        String EquipmentName = request.getParameter("Name");
         String type = request.getParameter("type"); // sword/shield/armor
 
         boolean success = false;
 
         // 강화 결과 JSP로 전달
-        request.setAttribute("swordName", swordName);
+        request.setAttribute("EquipmentName", EquipmentName);
         request.setAttribute("success", success);
         request.setAttribute("type", type);
 

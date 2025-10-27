@@ -54,7 +54,11 @@
         WHERE SHIELD_NAME = #{shieldName}
     </delete>
     
-    
+     <update id="enhanceShield" parameterType="map">
+        UPDATE SHIELD
+        SET SHIELD_NUM = SHIELD_NUM + 1
+        WHERE SHIELD_NAME = #{shieldName}
+    </update>
     
     
     
