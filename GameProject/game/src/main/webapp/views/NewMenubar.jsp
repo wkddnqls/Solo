@@ -228,6 +228,19 @@
     </style>
 </head>
 <body>
+
+   <%
+    String alertMsg = (String) session.getAttribute("alertMsg");
+    if (alertMsg != null) {
+   %>
+    <script>
+        alert('<%= alertMsg %>');
+    </script>
+   <%
+        session.removeAttribute("alertMsg"); // 한 번 띄운 후 세션에서 제거
+    }
+   %>
+
     <div class="container">
         <!-- Header -->
         <div class="header">
@@ -348,7 +361,7 @@
             </a>
 
             <!-- 7. 유저 옵션 보기 -->
-            <a href="#" class="menu-card" onclick="return showAlert('유저 옵션 보기')">
+            <a href="http://localhost:8001/game/human/human_options.jsp" class="menu-card" >
                 <div class="card-gradient gradient-indigo"></div>
                 <div class="icon-wrapper gradient-indigo">
                     <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -358,8 +371,8 @@
                 <div class="card-number">7</div>
                 <h3 class="card-title">유저 옵션 보기</h3>
                 <div class="status">
-                    <div class="status-dot pending"></div>
-                    <span class="status-text pending">준비 중</span>
+                    <div class="status-dot available"></div>
+                    <span class="status-text available">사용 가능</span>
                 </div>
                 <div class="card-border gradient-indigo"></div>
             </a>

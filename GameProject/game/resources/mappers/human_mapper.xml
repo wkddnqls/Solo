@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="HumanMapper">
+
+  <!-- ✅ ResultMap: DB 컬럼 ↔ VO 필드 매핑 -->
+  <resultMap id="HumanCollection" type="Human">
+    <result column="HUMAN_NAME" property="humanName"/>
+    <result column="HUMAN_NUM" property="humanNum"/>
+    <result column="HUMAN_POWER" property="humanPower"/>
+    <result column="HUMAN_DEFENSIVE" property="humanDefensive"/>
+    <result column="HUMAN_SPECSLIST" property="humanSpecslist"/>
+  </resultMap>
+
+  <!-- ✅ 전체 유저 조회 -->
+  <select id="selectHumanAll" resultMap="HumanCollection">
+    SELECT HUMAN_NAME,
+           HUMAN_NUM,
+           HUMAN_POWER,
+           HUMAN_DEFENSIVE,
+           HUMAN_SPECSLIST
+      FROM HUMAN
+    ORDER BY HUMAN_NAME ASC
+  </select>
+
+  <!-- ✅ 전체 유저 수 조회 -->
+  <select id="selectAllHumanCount" resultType="_int">
+    SELECT COUNT(*) AS COUNT
+      FROM HUMAN
+  </select>
+
+  <!-- ✅ 유저 생성 -->
+  <insert id="insertHuman" parameterType="Human">
+    INSERT INTO HUMAN
+    (HUMAN_NAME, HUMAN_NUM, HUMAN_POWER, HUMAN_DEFENSIVE)
+    VALUES (#{humanName}, #{humanNum}, #{humanPower}, #{humanDefensive})
+  </insert>
+
+  <!-- ✅ 유저 삭제 (이름으로) -->
+  <delete id="deleteHumanByName" parameterType="string">
+    DELETE FROM HUMAN
+    WHERE HUMAN_NAME = #{humanName}
+  </delete>
+
+  <!-- ✅ 유저 강화 / 체력 상승 예시 -->
+  <update id="enhanceHuman" parameterType="map">
+    UPDATE HUMAN
+    SET HUMAN_POWER = HUMAN_POWER + 10
+    WHERE HUMAN_NAME = #{humanName}
+  </update>
+
+</mapper>

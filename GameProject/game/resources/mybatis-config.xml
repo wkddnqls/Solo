@@ -9,6 +9,7 @@
   <typeAlias alias="Sword" type="equipment0.swordcollection"/>
   <typeAlias alias="Shield" type="equipment0.shieldcollection"/>
   <typeAlias alias="Armor" type="equipment0.armorcollection"/>
+  <typeAlias alias="Human" type="equipment0.humancollection"/>
 </typeAliases>
   
   
@@ -41,5 +42,6 @@
   <mapper resource="/mappers/armor_mapper.xml"/>
     <mapper resource="/mappers/shield_mapper.xml"/>
     <mapper resource="/mappers/sword_mapper.xml"/>
+     <mapper resource="/mappers/human_mapper.xml"/>
   </mappers>
 </configuration>

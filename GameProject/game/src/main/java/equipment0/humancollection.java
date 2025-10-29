@@ -8,7 +8,7 @@ import lombok.NonNull;
 
 @Data // getter, setter, toString, equals, hashCode 자동 생성
 @NoArgsConstructor // 기본 생성자
-@AllArgsConstructor // 모든 필드 포함 생성자
+@RequiredArgsConstructor
 public class humancollection {
 
     @NonNull
@@ -19,6 +19,13 @@ public class humancollection {
     private double humanDefensive;
     private String humanSpecslist;
 
+    
+    public humancollection(String humanName, double humanNum, double humanPower, double humanDefensive) {
+        this.humanName = humanName;
+        this.humanNum = humanNum;
+        this.humanPower = humanPower;
+        this.humanDefensive = humanDefensive;
+    }
     // 특정 필드만 포함하는 생성자는 @RequiredArgsConstructor 활용 가능
     // 예: humanName만 필수로 하는 생성자
     // @RequiredArgsConstructor
