@@ -15,13 +15,13 @@ import equipment0.humancollection;
  * Servlet implementation class HumanCreateCotroller
  */
 @WebServlet("/insertHuman.do")
-public class HumanCreateController extends HttpServlet {
+public class Human_Create_Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public HumanCreateController() {
+    public Human_Create_Controller() {
         super();
         // TODO Auto-generated constructor stub
     }

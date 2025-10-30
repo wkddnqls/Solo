@@ -13,10 +13,10 @@ import Service0.Service;
  * Servlet implementation class EnforceController
  */
 @WebServlet("/enforce.do") // 👉 JSP에서 form action="enforce.do" 와 연결
-public class EnforceController extends HttpServlet {
+public class Enforce_Controller extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    public EnforceController() {
+    public Enforce_Controller() {
         super();
     }
 

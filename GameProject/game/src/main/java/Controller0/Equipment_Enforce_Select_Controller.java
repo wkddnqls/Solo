@@ -18,13 +18,13 @@ import equipment0.swordcollection;
  * Servlet implementation class EquipmentEnforceController
  */
 @WebServlet("/equipenforce.ep")
-public class EquipmentEnforceSelectController extends HttpServlet {
+public class Equipment_Enforce_Select_Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public EquipmentEnforceSelectController() {
+    public Equipment_Enforce_Select_Controller() {
         super();
         // TODO Auto-generated constructor stub
     }

@@ -249,7 +249,7 @@
             </form>
 
             <!-- 유저 정보보기 -->
-            <form action="" method="get">
+            <form action="${pageContext.request.contextPath}/humanList.ep" method="post">
                 <div class="menu-item" onclick="this.parentElement.submit()">
                     <div class="menu-content">
                         <div class="icon-wrapper icon-view">
@@ -267,7 +267,7 @@
             </form>
 
             <!-- 장비 장착하기 -->
-            <form action="" method="post">
+            <form action="${pageContext.request.contextPath}/chooseHuman.ep" method="post">
                 <div class="menu-item" onclick="this.parentElement.submit()">
                     <div class="menu-content">
                         <div class="icon-wrapper icon-equip">

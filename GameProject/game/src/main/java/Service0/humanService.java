@@ -1,12 +1,14 @@
 package Service0;
 
 
+import java.util.ArrayList;
+
 import org.apache.ibatis.session.SqlSession;
 
 import equipment0.humancollection;
-
+import equipment0.swordcollection;
 import Dao0.humanDao;
-
+import JDBC.PageInfo;
 import JDBC.Template;
 
 public class humanService {
@@ -34,5 +36,31 @@ public class humanService {
         return result;
     }
 
+	
+	
+	
+
+	public int selectAllHumanCount(){
+		SqlSession sqlSession = Template.getSqlSession();
+		
+		int listCount = HD.selectAllHumanCount(sqlSession);
+		
+		
+		sqlSession.close();
+		
+		return listCount;
+	}
+	
+	public ArrayList<humancollection> HumanselectAll(PageInfo pi) {
+		SqlSession sqlSession = Template.getSqlSession();
+
+	    ArrayList<humancollection> humans = HD.selecthumanAll(sqlSession,pi);
+	  //  List<shieldcollection> shields = SED.selectshieldAll(sqlSession);
+	   //List<armorcollection> armor = AM.selectarmorAll(sqlSession);
+	   
+	   sqlSession.close();
+	   return humans;
+	   //  return new equipmentcollection(swords, shields , armor);
+	}
 }
 

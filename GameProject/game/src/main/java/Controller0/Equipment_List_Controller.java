@@ -20,13 +20,13 @@ import equipment0.armorcollection;
  * Servlet implementation class EquipmentListController
  */
 @WebServlet("/equipList.ep")
-public class EquipmentListController extends HttpServlet {
+public class Equipment_List_Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public EquipmentListController() {
+    public Equipment_List_Controller() {
         super();
         // TODO Auto-generated constructor stub
     }

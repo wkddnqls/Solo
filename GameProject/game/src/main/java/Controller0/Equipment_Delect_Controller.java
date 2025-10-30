@@ -13,13 +13,13 @@ import Service0.Service;
  * Servlet implementation class EquipmentDelectController
  */
 @WebServlet("/equipDelete.ep")
-public class EquipmentDelectController extends HttpServlet {
+public class Equipment_Delect_Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public EquipmentDelectController() {
+    public Equipment_Delect_Controller() {
         super();
         // TODO Auto-generated constructor stub
     }

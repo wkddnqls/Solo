@@ -9,6 +9,7 @@ import lombok.NonNull;
 @Data // getter, setter, toString, equals, hashCode 자동 생성
 @NoArgsConstructor // 기본 생성자
 @RequiredArgsConstructor
+@AllArgsConstructor
 public class humancollection {
 
     @NonNull

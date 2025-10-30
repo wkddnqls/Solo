@@ -13,11 +13,11 @@ import Service0.Service;
  * Servlet implementation class EnforceController
  */
 @WebServlet("/insertSword.ep")
-public class EquipmentInsertController extends HttpServlet {
+public class Equipment_Insert_Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
   
-    public EquipmentInsertController() {
+    public Equipment_Insert_Controller() {
         super();
        
     }

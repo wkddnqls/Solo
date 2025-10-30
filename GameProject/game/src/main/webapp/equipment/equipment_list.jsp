@@ -179,6 +179,10 @@
             border-color: rgba(148, 163, 184, 0.3);
         }
 
+         .badge-raid { background-color: #FF6A00; }   /* 레이드 → 오렌지 */
+         .badge-pvp  { background-color: #1E90FF; }   /* PVP → 파랑 */
+       
+       
         .badge-enhancement {
             font-weight: 600;
         }
@@ -255,6 +259,9 @@
 
         /* Footer */
         footer {
+        position: relative;
+         pointer-events: auto;
+           z-index: 9999;
             text-align: center;
             padding: 48px 20px;
             margin-top: 48px;
@@ -443,7 +450,16 @@
                                             </span>
                                         </td>
                                         <td>${s.swordDate}</td>
-                                        <td><span class="badge">${s.swordUse}</span></td>
+                                        <td>
+                                      <span class="badge
+                                           <c:choose>
+                                            <c:when test="${s.swordUse == '레이드'}"> badge-raid</c:when>
+                                            <c:when test="${s.swordUse == 'PVP'}"> badge-pvp</c:when>
+                                            <c:otherwise> badge-default</c:otherwise>
+                                           </c:choose> ">
+                                                ${s.swordUse}
+                                            </span>
+                                          </td>
                                     </tr>
                                 </c:forEach>
                             </c:otherwise>
