@@ -210,6 +210,19 @@ tbody td {
 </head>
 
 <body>
+
+   <%
+    String alertMsg = (String) session.getAttribute("alertMsg");
+    if (alertMsg != null) {
+   %>
+    <script>
+        alert('<%= alertMsg %>');
+    </script>
+   <%
+        session.removeAttribute("alertMsg"); // 한 번 띄운 후 세션에서 제거
+    }
+   %>
+
 	<div class="container">
 		<div class="card">
 			<div class="card-header">

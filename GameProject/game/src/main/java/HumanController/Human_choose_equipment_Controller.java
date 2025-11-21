@@ -16,12 +16,12 @@ import equipment0.swordcollection;
 
 
 @WebServlet("/chooseEquipment.ep")
-public class human_choose_equipment_Controller extends HttpServlet {
+public class Human_choose_equipment_Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 
   
-    public human_choose_equipment_Controller() {
+    public Human_choose_equipment_Controller() {
         super();
         
     }

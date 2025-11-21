@@ -329,6 +329,20 @@
             .user-stats {
                 justify-content: center;
             }
+            
+        }
+        .btn-select {
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
+            white-space: nowrap;
         }
     </style>
 </head>
@@ -391,31 +405,30 @@
                             <th>강화 수치</th>
                             <th>등록일</th>
                             <th>사용처</th>
+                            <th style="text-align: center;">선택</th>
                         </tr>
                     </thead>
                     <tbody>
                         <c:choose>
                             <c:when test="${empty swordList}">
                                 <tr>
-                                    <td colspan="5" class="empty-message">등록된 Sword가 없습니다.</td>
+                                    <td colspan="6" class="empty-message">등록된 Sword가 없습니다.</td>
                                 </tr>
                             </c:when>
                             <c:otherwise>
                                 <c:forEach var="s" items="${swordList}">
                                     <tr>
-                                        <td>
-                                            <a href="${pageContext.request.contextPath}/Equipmentenforce.ep?Name=${s.swordName}&currentNum=${s.swordNum}&swordUse=${s.swordUse}&type=sword" 
-                                               class="btn-link">
-                                                <span>${s.swordName}</span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                                                </svg>
-                                            </a>
-                                        </td>
+                                        <td>${s.swordName}</td>
                                         <td>${s.swordInitial}</td>
                                         <td><span class="enhancement-badge">+${s.swordNum}</span></td>
                                         <td>${s.swordDate}</td>
                                         <td>${s.swordUse}</td>
+                                        <td style="text-align: center;">
+                                            <button class="btn-select" 
+                                                onclick="location.href='${pageContext.request.contextPath}/equipped.ep?Name=${s.swordName}&currentNum=${s.swordNum}&humanName=${humanName}&type=sword'">
+                                                장착하기
+                                            </button>
+                                        </td>
                                     </tr>
                                 </c:forEach>
                             </c:otherwise>
@@ -476,31 +489,30 @@
                             <th>강화 수치</th>
                             <th>등록일</th>
                             <th>사용처</th>
+                            <th style="text-align: center;">선택</th>
                         </tr>
                     </thead>
                     <tbody>
                         <c:choose>
                             <c:when test="${empty shieldList}">
                                 <tr>
-                                    <td colspan="5" class="empty-message">등록된 Shield가 없습니다.</td>
+                                    <td colspan="6" class="empty-message">등록된 Shield가 없습니다.</td>
                                 </tr>
                             </c:when>
                             <c:otherwise>
                                 <c:forEach var="sh" items="${shieldList}">
                                     <tr>
-                                        <td>
-                                            <a href="${pageContext.request.contextPath}/Equipmentenforce.ep?Name=${sh.shieldName}&currentNum=${sh.shieldNum}&shieldUse=${sh.shieldUse}&type=shield" 
-                                               class="btn-link">
-                                                <span>${sh.shieldName}</span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                                                </svg>
-                                            </a>
-                                        </td>
+                                        <td>${sh.shieldName}</td>
                                         <td>${sh.shieldInitial}</td>
                                         <td><span class="enhancement-badge">+${sh.shieldNum}</span></td>
                                         <td>${sh.shieldDate}</td>
                                         <td>${sh.shieldUse}</td>
+                                        <td style="text-align: center;">
+                                            <button class="btn-select" 
+                                                onclick="location.href='${pageContext.request.contextPath}/equipped.ep?Name=${sh.shieldName}&currentNum=${sh.shieldNum}&humanName=${humanName}&type=shield'">
+                                                장착하기
+                                            </button>
+                                        </td>
                                     </tr>
                                 </c:forEach>
                             </c:otherwise>
@@ -561,31 +573,30 @@
                             <th>강화 수치</th>
                             <th>등록일</th>
                             <th>사용처</th>
+                            <th style="text-align: center;">선택</th>
                         </tr>
                     </thead>
                     <tbody>
                         <c:choose>
                             <c:when test="${empty armorList}">
                                 <tr>
-                                    <td colspan="5" class="empty-message">등록된 Armor가 없습니다.</td>
+                                    <td colspan="6" class="empty-message">등록된 Armor가 없습니다.</td>
                                 </tr>
                             </c:when>
                             <c:otherwise>
                                 <c:forEach var="a" items="${armorList}">
                                     <tr>
-                                        <td>
-                                            <a href="${pageContext.request.contextPath}/Equipmentenforce.ep?Name=${a.armorName}&currentNum=${a.armorNum}&armorUse=${a.armorUse}&type=armor" 
-                                               class="btn-link">
-                                                <span>${a.armorName}</span>
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width: 14px; height: 14px;">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                                                </svg>
-                                            </a>
-                                        </td>
+                                        <td>${a.armorName}</td>
                                         <td>${a.armorInitial}</td>
                                         <td><span class="enhancement-badge">+${a.armorNum}</span></td>
                                         <td>${a.armorDate}</td>
                                         <td>${a.armorUse}</td>
+                                        <td style="text-align: center;">
+                                            <button class="btn-select" 
+                                                onclick="location.href='${pageContext.request.contextPath}/equipped.ep?Name=${a.armorName}&currentNum=${a.armorNum}&HumanName=${humanName}&type=armor'">
+                                                장착하기
+                                            </button>
+                                        </td>
                                     </tr>
                                 </c:forEach>
                             </c:otherwise>

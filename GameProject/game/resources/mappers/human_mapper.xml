@@ -39,10 +39,10 @@
   </insert>
 
   <!-- ✅ 유저 삭제 (이름으로) -->
-  <delete id="deleteHumanByName" parameterType="string">
-    DELETE FROM HUMAN
-    WHERE HUMAN_NAME = #{humanName}
-  </delete>
+  <delete id="deleteHuman" parameterType="string">
+        DELETE FROM HUMAN
+        WHERE HUMAN_NAME = #{humanName}
+    </delete>
 
   <!-- ✅ 유저 강화 / 체력 상승 예시 -->
   <update id="enhanceHuman" parameterType="map">
@@ -50,5 +50,49 @@
     SET HUMAN_POWER = HUMAN_POWER + 10
     WHERE HUMAN_NAME = #{humanName}
   </update>
+
+   <update id="updatesword" parameterType="map">
+    UPDATE HUMAN
+    SET 
+        HUMAN_SPECSLIST = 
+            CASE
+                WHEN HUMAN_SPECSLIST IS NULL OR HUMAN_SPECSLIST = ''
+                    THEN #{swordName}
+                ELSE HUMAN_SPECSLIST || ', ' || #{swordName}
+            END,
+        HUMAN_POWER = HUMAN_POWER + (#{currentNum,jdbcType=INTEGER} * 5)
+    WHERE HUMAN_NAME = #{humanName,jdbcType=VARCHAR}
+</update>
+
+
+
+<update id="updateshield" parameterType="map">
+    UPDATE HUMAN
+    SET 
+        HUMAN_SPECSLIST =
+            CASE
+                WHEN HUMAN_SPECSLIST IS NULL OR HUMAN_SPECSLIST = ''
+                    THEN #{shieldName}
+                ELSE CONCAT(HUMAN_SPECSLIST, ', ', #{shieldName})
+            END,
+        HUMAN_DEFENSIVE = HUMAN_DEFENSIVE + (#{currentNum} * 3)
+    WHERE HUMAN_NAME = #{humanName}
+</update>
+
+
+
+
+<update id="updatearmor" parameterType="map">
+    UPDATE HUMAN
+    SET 
+        HUMAN_SPECSLIST =
+            CASE
+                WHEN HUMAN_SPECSLIST IS NULL OR HUMAN_SPECSLIST = ''
+                    THEN #{armorName}
+                ELSE CONCAT(HUMAN_SPECSLIST, ', ', #{armorName})
+            END,
+        HUMAN_NUM = HUMAN_NUM + (#{currentNum} * 30)
+    WHERE HUMAN_NAME = #{humanName}
+</update>
 
 </mapper>

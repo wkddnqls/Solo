@@ -16,13 +16,13 @@ import equipment0.humancollection;
  * Servlet implementation class Human
  */
 @WebServlet("/chooseHuman.ep")
-public class human_choose_USER_Controller extends HttpServlet {
+public class Human_choose_USER_Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public human_choose_USER_Controller() {
+    public Human_choose_USER_Controller() {
         super();
         // TODO Auto-generated constructor stub
     }

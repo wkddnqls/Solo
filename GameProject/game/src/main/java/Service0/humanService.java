@@ -62,5 +62,43 @@ public class humanService {
 	   return humans;
 	   //  return new equipmentcollection(swords, shields , armor);
 	}
+	
+	public int Equipment_equipped(String humanName, String itemName, int currentNum, String type) {
+        SqlSession sqlSession = Template.getSqlSession();
+        int result = 0;
+
+        // ✅ DAO 호출
+        result = HD.updatehuman(sqlSession, humanName, itemName, currentNum, type);
+
+        // ✅ 트랜잭션 처리
+        if (result > 0) {
+            sqlSession.commit();
+        } else {
+            sqlSession.rollback();
+        }
+
+        sqlSession.close();
+        return result;
+    }
+	
+	public int deleteHuman(String humanName) {
+	    SqlSession sqlSession = Template.getSqlSession();
+	    int result = 0;
+
+	   
+
+	            
+          result = HD.deleteHuman(humanName, sqlSession);
+	         
+
+          if (result > 0) {
+              sqlSession.commit();
+          } else {
+              sqlSession.rollback();
+          }
+
+          sqlSession.close();
+          return result;
+	}
 }
 

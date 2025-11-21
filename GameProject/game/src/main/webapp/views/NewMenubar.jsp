@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -326,40 +327,6 @@
                 <div class="card-border gradient-red"></div>
             </a>
 
-            <!-- 5. 강화한 목록 키워드 검색 -->
-            <a href="#" class="menu-card" onclick="return showAlert('강화한 목록 키워드 검색')">
-                <div class="card-gradient gradient-purple"></div>
-                <div class="icon-wrapper gradient-purple">
-                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-                    </svg>
-                </div>
-                <div class="card-number">5</div>
-                <h3 class="card-title">장비 목록 키워드 검색</h3>
-                <div class="status">
-                    <div class="status-dot pending"></div>
-                    <span class="status-text pending">준비 중</span>
-                </div>
-                <div class="card-border gradient-purple"></div>
-            </a>
-
-            <!-- 6. 강화 목록 사용처 수정하기 -->
-            <a href="#" class="menu-card" onclick="return showAlert('강화 목록 사용처 수정하기')">
-                <div class="card-gradient gradient-yellow"></div>
-                <div class="icon-wrapper gradient-yellow">
-                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
-                    </svg>
-                </div>
-                <div class="card-number">6</div>
-                <h3 class="card-title">강화 목록 사용처 수정하기</h3>
-                <div class="status">
-                    <div class="status-dot pending"></div>
-                    <span class="status-text pending">준비 중</span>
-                </div>
-                <div class="card-border gradient-yellow"></div>
-            </a>
-
             <!-- 7. 유저 옵션 보기 -->
             <a href="http://localhost:8001/game/human/human_options.jsp" class="menu-card" >
                 <div class="card-gradient gradient-indigo"></div>
@@ -368,7 +335,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                     </svg>
                 </div>
-                <div class="card-number">7</div>
+                <div class="card-number">5</div>
                 <h3 class="card-title">유저 옵션 보기</h3>
                 <div class="status">
                     <div class="status-dot available"></div>
@@ -378,18 +345,18 @@
             </a>
 
             <!-- 8. 몬스터 옵션 보기 -->
-            <a href="#" class="menu-card" onclick="return showAlert('몬스터 옵션 보기')">
+            <a href="http://localhost:8001/game/monster/monster_options.jsp" class="menu-card" >
                 <div class="card-gradient gradient-violet"></div>
                 <div class="icon-wrapper gradient-violet">
                     <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
                     </svg>
                 </div>
-                <div class="card-number">8</div>
+                <div class="card-number">6</div>
                 <h3 class="card-title">몬스터 옵션 보기</h3>
                 <div class="status">
-                    <div class="status-dot pending"></div>
-                    <span class="status-text pending">준비 중</span>
+                    <div class="status-dot available"></div>
+                    <span class="status-text available">사용 가능</span>
                 </div>
                 <div class="card-border gradient-violet"></div>
             </a>
@@ -402,7 +369,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                     </svg>
                 </div>
-                <div class="card-number">9</div>
+                <div class="card-number">7</div>
                 <h3 class="card-title">몬스터 사냥하기</h3>
                 <div class="status">
                     <div class="status-dot pending"></div>
@@ -419,7 +386,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636a9 9 0 11-12.728 0M12 3v9"/>
                     </svg>
                 </div>
-                <div class="card-number">10</div>
+                <div class="card-number">8</div>
                 <h3 class="card-title">프로그램 종료</h3>
                 <div class="status">
                     <div class="status-dot available"></div>

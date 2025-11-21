@@ -284,7 +284,7 @@
             </form>
 
             <!-- 유저 삭제하기 -->
-            <form action="" method="post">
+            <form action="http://localhost:8001/game/human/human_delect.jsp" method="post">
                 <div class="menu-item" onclick="this.parentElement.submit()">
                     <div class="menu-content">
                         <div class="icon-wrapper icon-delete">
